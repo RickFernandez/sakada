@@ -1,0 +1,298 @@
+body {
+  perspective: none !important;
+}
+
+body:has(.navigation-container.opened) {
+  overflow: hidden;
+}
+
+h2,
+h4 {
+  text-transform: uppercase;
+}
+
+h2 {
+  margin-block: 2rem 1rem;
+}
+
+h4 {
+  margin-bottom: 3.6rem;
+}
+
+.container {
+  position: relative;
+  padding: 15rem 20rem 40rem;
+  width: 100%;
+  height: 100%;
+  min-height: 50vh;
+  background-color: #d9d9d9;
+}
+
+.back-btn {
+  color: var(--black);
+  font-size: 2rem;
+  text-decoration: none;
+  transition: all 200ms;
+}
+
+.back-btn:hover,
+.back-btn:focus {
+  color: var(--pink);
+  text-decoration: underline;
+}
+
+.project-infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-infos > .texts {
+  display: flex;
+  gap: 0.8rem;
+  flex-direction: column;
+}
+
+.project {
+  padding: 10rem 20rem;
+  color: var(--white);
+  display: flex;
+  gap: 10rem;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  background-color: var(--pink);
+}
+
+.project > .project-video {
+  z-index: 1;
+  width: 100%;
+  margin-top: -30%;
+}
+
+.challenge {
+  display: flex;
+  gap: 5rem;
+  flex-direction: column;
+}
+
+.texts {
+  display: flex;
+  gap: 6.5rem;
+  justify-content: space-between;
+}
+
+.texts > p {
+  color: var(--black);
+  font-style: italic;
+  text-align: end;
+}
+
+.images {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.images > img {
+  width: 100%;
+}
+
+.img-description {
+  font-size: 3rem;
+  font-style: italic;
+  text-transform: uppercase;
+}
+
+.solution > .description {
+  display: flex;
+  gap: 6.5rem;
+}
+
+.solution-img {
+  width: 100%;
+  margin-top: 10rem;
+}
+
+.testimony {
+  display: flex;
+  gap: 6.5rem;
+  flex-direction: column;
+}
+
+.feedback {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.person-image {
+  width: 100%;
+  max-width: 20rem;
+}
+
+.feedback > .texts {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+
+.feedback-text {
+  font-family: 'Roboto', sans-serif;
+  text-align: start !important;
+}
+
+.person-infos > span {
+  color: var(--black);
+  font-weight: 800 !important;
+}
+
+span.separator {
+  margin-inline: 1rem;
+}
+
+.testimony-img {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+}
+
+.testimony-img > img {
+  width: 100%;
+}
+
+@media screen and (max-width: 1200px) {
+  .container,
+  .project {
+    padding-inline: 10rem;
+  }
+
+  .project > .project-video {
+    margin-top: -40%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .images > img,
+  .testimony-img > img {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    font-size: 8rem !important;
+  }
+
+  .project-infos > .texts {
+    font-size: 2rem !important;
+  }
+
+  .container {
+    padding-bottom: 30rem;
+  }
+
+  .container,
+  .project {
+    padding-inline: 5rem;
+  }
+
+  .project > .project-video {
+    margin-top: -50%;
+  }
+
+  .texts {
+    flex-direction: column;
+  }
+
+  .texts > p {
+    text-align: start;
+  }
+
+  .images,
+  .testimony-img {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+  }
+
+  .images > img,
+  .testimony-img > img {
+    width: 100%;
+  }
+
+  .solution > .description {
+    flex-direction: column;
+  }
+
+  .solution-img {
+    margin-top: 5rem;
+  }
+
+  .person-image {
+    width: 85%;
+  }
+
+  .person-infos > span {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h4 {
+    font-size: 3rem !important;
+    margin-bottom: 2.4rem;
+  }
+
+  .title {
+    font-size: 4rem !important;
+  }
+
+  .text {
+    font-size: 2rem !important;
+  }
+
+  .container,
+  .project {
+    padding-inline: 3rem;
+  }
+
+  .container {
+    padding-bottom: 10rem;
+  }
+
+  .project {
+    gap: 5rem;
+  }
+
+  .img-description {
+    font-size: 2.4rem;
+    line-height: 3rem;
+  }
+
+  .feedback {
+    gap: 2rem;
+    flex-direction: column;
+  }
+
+  .person-image {
+    width: 40%;
+  }
+
+  .feedback-text {
+    font-size: 2.2rem !important;
+  }
+
+  .person-infos {
+    display: flex;
+    justify-content: center;
+  }
+
+  .person-infos > span {
+    font-size: 1.8rem !important;
+  }
+
+  .person-infos > span.separator {
+    display: none;
+  }
+}
