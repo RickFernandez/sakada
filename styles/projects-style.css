@@ -203,8 +203,9 @@ h3 {
   .btn-mobile {
     width: 100%;
     padding-block: 2rem;
-    font-size: 1.6rem;
     font-weight: 600;
+    font-size: 1.6rem;
+    text-decoration: none;
     font-family: 'Inter', sans-serif;
     background-color: #c3dc54;
     border: none;
