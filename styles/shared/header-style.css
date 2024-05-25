@@ -15,6 +15,10 @@ header > .fixed-menu {
   background-color: transparent;
 }
 
+header:has(> .navigation-container.opened) > .fixed-menu {
+  background-color: var(--pink);
+}
+
 header > .fixed-menu.styled {
   background-color: var(--white);
   box-shadow: 0px 15px 10px -15px rgba(17, 17, 17, 0.5);
@@ -85,7 +89,7 @@ header > .navigation-container {
   visibility: visible;
   width: 100%;
   height: 100%;
-  padding: 12rem 5rem;
+  padding: 12rem 5rem 8rem;
   background-color: var(--pink);
   transition: all 250ms ease-in-out;
   clip-path: circle(3rem at calc(100% - 7.5rem) 5rem);
@@ -95,7 +99,7 @@ header > .navigation-container.opened {
   opacity: 1;
   visibility: visible;
   clip-path: circle(75%);
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 body:has(.site-wrapper > header > .navigation-container.opened) {
@@ -103,6 +107,10 @@ body:has(.site-wrapper > header > .navigation-container.opened) {
 }
 
 header > .navigation-container > .menu-navigation {
+  display: none;
+}
+
+.navigation-container.opened > .menu-navigation {
   width: 100%;
   max-height: fit-content;
   display: flex;
@@ -121,7 +129,7 @@ header > .navigation-container > .menu-navigation > .social-medias-links {
 
 header > .navigation-container > .menu-navigation > ul > li > a {
   position: relative;
-  font-size: 5rem;
+  font-size: 8rem;
   font-weight: 900;
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
@@ -131,7 +139,7 @@ header > .navigation-container > .menu-navigation > ul > li > a {
   padding-left: 0;
 }
 
-header > .navigation-container > .menu-navigation > ul > li > a:before {
+/* header > .navigation-container > .menu-navigation > ul > li > a:before {
   position: absolute;
   content: '';
   left: 0;
@@ -140,12 +148,12 @@ header > .navigation-container > .menu-navigation > ul > li > a:before {
   height: 0.5rem;
   transition: all 0.5s;
   background-color: var(--green);
-}
+} */
 
 header > .navigation-container > .menu-navigation > ul > li > a:hover,
 header > .navigation-container > .menu-navigation > ul > li > a:focus {
-  padding-left: 4.2rem;
-  color: var(--green);
+  /* padding-left: 4.2rem; */
+  color: var(--gray);
 }
 
 header > .navigation-container > .menu-navigation > ul > li > a:hover:before,
@@ -158,6 +166,7 @@ header > .navigation-container > .menu-navigation > .social-medias-links > a {
   align-items: center;
   justify-content: center;
   padding: 0.5rem;
+  transition: all 0.25s;
 }
 
 header
@@ -177,7 +186,7 @@ header
   > .social-medias-links
   > a:hover {
   border-radius: 50%;
-  background-color: var(--green);
+  background-color: var(--white);
 }
 
 header
@@ -186,7 +195,8 @@ header
   > .social-medias-links
   > a:hover
   > img {
-  transform: scale(0.8);
+    filter: brightness(0);
+    transform: scale(0.7);
 }
 
 @media screen and (max-width: 768px) {
@@ -204,8 +214,8 @@ header
     > .social-medias-links
     > a
     > img {
-    width: 4rem;
-    height: 4rem;
+    width: 5rem;
+    height: 5rem;
   }
 }
 
@@ -218,10 +228,6 @@ header
     padding-inline: 3rem;
     padding-bottom: 10rem;
     clip-path: circle(3rem at calc(100% - 5.4rem) 5rem);
-  }
-
-  header:has(> .navigation-container.opened) > .fixed-menu {
-    background-color: var(--pink);
   }
 
   header > .navigation-container > .menu-navigation {
