@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const filter = document.querySelector('.filter');
   const mobileFilter = document.querySelector('.filter-mobile');
   const mobileFilterBtn = document.querySelector('.filter-btn');
-  const mobileFilterOptions = document.querySelector('.filter-options');
+  const closeFilterBtn = document.querySelector('.close-filter-btn');
   const btns = filter ? filter.querySelectorAll('.btn') : [];
   const btnsMobile = mobileFilter ? mobileFilter.querySelectorAll('.btn-mobile') : [];
   const projects = document.querySelectorAll('.project');
@@ -66,6 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   mobileFilterBtn.addEventListener('click', () => onCloseMobileFilter())
+  closeFilterBtn.addEventListener('click', () => onCloseMobileFilter())
 
   function onCloseMobileFilter(filtered) {
     if (mobileFilter.classList.contains('active') || filtered) {
