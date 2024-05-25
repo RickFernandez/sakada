@@ -7,7 +7,7 @@ const btnMenu = document.querySelector('.btn-menu');
 const scrollBtn = document.querySelector('.scroll-btn');
 const cube = document.querySelector('.cube');
 const rotation = 'rotateX(90deg)';
-const zoomOut = 'scale(0.3)';
+const zoomOut = 'scale(0.5)';
 const zoomIn = 'scale(1)';
 
 let currentFace = 'front';
@@ -58,7 +58,7 @@ function startAnimation(rotateValue, toFace) {
     animationActive = false;
     scrollFromClick = false;
     styledHeader();
-  }, 1300)
+  }, 500)
 }
 
 function onMenu() {
