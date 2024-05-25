@@ -5,15 +5,15 @@
 }
 
 :root {
+  --pink: #c7317f;
+  --gray: #d3d3d3;
   --white: #ffffff;
   --black: #252525;
   --green: #aac242;
-  --pink: #c7317f;
   --purple: #702c8a;
   --form-valid: #008729;
   --form-invalid: #d90801;
-  --background-color: #d3d3d3;
-  
+
   font-size: 62.5%; /* 1rem = 10px */
 }
 
@@ -70,7 +70,7 @@ body {
   height: 100%;
   min-height: 30vh;
   padding: 15rem 5rem;
-  background-color: var(--background-color);
+  background-color: var(--gray);
   display: flex;
   align-items: center;
   justify-content: center;
