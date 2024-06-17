@@ -524,6 +524,23 @@ main > .cta > .photos > .photo > img {
   main > .cta > .photos > .photo > img {
     max-width: 32rem;
   }
+
+  main > .sakada-universe > .presentation {
+    flex-wrap: wrap;
+  }
+
+  main > .sakada-universe > .presentation > video {
+    width: 100%;
+    max-width: none;
+  }
+
+  .sakada-universe > .team > .employees {
+    grid-template-columns: 1fr;
+  }
+
+  .sakada-universe > .team > .employees > .employee > img {
+    max-height: 35rem;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -554,6 +571,16 @@ main > .cta > .photos > .photo > img {
   }
 
   main > .cta > .photos > .photo > img {
+    max-width: none;
+  }
+
+  .sakada-universe > .team > .employees > .employee {
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+
+  .sakada-universe > .team > .employees > .employee > img {
+    width: 100%;
     max-width: none;
   }
 }
