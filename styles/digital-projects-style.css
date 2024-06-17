@@ -12,6 +12,11 @@ h3 {
 
 .page-title > .title {
   color: var(--black);
+  line-height: 8rem;
+}
+
+.page-title > .title > span {
+  font-size: 6rem;
 }
 
 .filter {
