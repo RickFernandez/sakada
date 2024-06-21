@@ -129,7 +129,7 @@ header > .navigation-container > .menu-navigation > .social-medias-links {
 
 header > .navigation-container > .menu-navigation > ul > li > a {
   position: relative;
-  font-size: 8rem;
+  font-size: 6rem;
   font-weight: 900;
   color: var(--white);
   font-family: 'Montserrat', sans-serif;
