@@ -269,9 +269,7 @@ main > .cta > .photos > .photo > img {
 .sakada-universe {
   width: 100%;
   height: 100%;
-  color: var(--white);
-  background-color: var(--black);
-  padding: 10rem 5rem;
+  padding: 5rem;
   display: flex;
   gap: 10rem;
   align-items: center;
@@ -294,7 +292,16 @@ main > .cta > .photos > .photo > img {
   margin-bottom: 4rem;
 }
 
-.sakada-universe > .team {
+.team {
+  width: 100%;
+  height: 100%;
+  color: var(--white);
+  background-color: var(--black);
+  padding: 5rem;
+  color: var(--white);
+}
+
+.team {
   width: 100%;
   height: 100%;
   display: flex;
@@ -303,59 +310,65 @@ main > .cta > .photos > .photo > img {
   flex-direction: column;
 }
 
-.sakada-universe > .team > .founder > .texts > h6,
-.sakada-universe > .team > .employees > .employee > .texts > h6 {
+.team > .founder > .texts > h6,
+.team > .employees > .employee > .texts > h6 {
   font-weight: 900;
   font-family: 'Inter', sans-serif;
 }
 
-.sakada-universe > .team > .founder {
+.team > .founder {
   width: 100%;
   height: 100%;
   display: flex;
   gap: 10rem;
 }
 
-.sakada-universe > .team > .founder > img {
+.team > .founder > img {
   width: 50%;
   height: 100%;
 }
 
-.sakada-universe > .team > .founder > .texts {
+.team > .founder > .texts {
   display: flex;
   flex-direction: column;
 }
 
-.sakada-universe > .team > .founder > .texts > h6 {
+.team > .founder > .texts > h6 {
   font-size: 3.6rem;
   margin-bottom: 4rem;
 }
 
-.sakada-universe > .team > .employees {
+.team > .employees {
   display: grid;
   gap: 5rem;
   grid-template-rows: auto;
   grid-template-columns: 1fr 1fr;
 }
 
-.sakada-universe > .team > .employees > .employee {
+.team > .employees > .employee {
   width: 100%;
   height: 100%;
   display: flex;
   gap: 5rem;
 }
 
-.sakada-universe > .team > .employees > .employee > img {
+.team > .employees > .employee > img {
+  width: 35rem;
+  height: 35rem;
   max-width: 50%;
-  height: 100%;
+  max-height: 35rem;
 }
 
-.sakada-universe > .team > .employees > .employee > .texts > h6 {
+.team > .employees > .employee > .texts {
+  width: 50%;
+}
+
+.team > .employees > .employee > .texts > h6 {
   font-size: 2.6rem;
   margin-bottom: 1.4rem;
 }
 
-.sakada-universe > .team > .employees > .employee > .texts > p {
+.team > .employees > .employee > .texts > p {
   font-size: 2rem;
 }
 
@@ -483,6 +496,20 @@ main > .cta > .photos > .photo > img {
 }
 
 /* RESPONSIVITY */
+@media screen and (max-width: 1440px) {
+  .team > .employees > .employee {
+    flex-wrap: wrap;
+  }
+
+  .team > .employees > .employee > img {
+    max-width: none;
+  }
+
+  .team > .employees > .employee > .texts {
+    width: 100%;
+  }
+}
+
 @media screen and (max-width: 820px) {
   main > .buttons {
     flex-direction: column;
@@ -534,17 +561,19 @@ main > .cta > .photos > .photo > img {
     max-width: none;
   }
 
-  .sakada-universe > .team > .employees {
+  .team > .employees {
     grid-template-columns: 1fr;
   }
 
-  .sakada-universe > .team > .employees > .employee > img {
+  .team > .employees > .employee > img {
     max-height: 35rem;
   }
 }
 
 @media screen and (max-width: 500px) {
-  main > .cta {
+  main > .cta,
+  .sakada-universe,
+  .team {
     padding: 3rem;
   }
 
@@ -574,12 +603,12 @@ main > .cta > .photos > .photo > img {
     max-width: none;
   }
 
-  .sakada-universe > .team > .employees > .employee {
+  .team > .employees > .employee {
     flex-wrap: wrap;
     height: fit-content;
   }
 
-  .sakada-universe > .team > .employees > .employee > img {
+  .team > .employees > .employee > img {
     width: 100%;
     max-width: none;
   }
