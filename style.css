@@ -63,7 +63,8 @@
 
 main > .buttons {
   width: 100vw;
-  height: 100vh;
+  height: 400px;
+  margin-top: 10rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -289,7 +290,27 @@ main > .cta > .photos > .photo > img {
 }
 
 .sakada-universe > .presentation > .texts > h3 {
+  color: var(--black);
   margin-bottom: 4rem;
+  text-transform: uppercase;
+}
+
+.sakada-universe > .cta-bta-outline {
+  cursor: pointer;
+  width: 500px;
+  height: 50px;
+  font-weight: 600;
+  color: var(--pink);
+  outline: none;
+  border-radius: 10px;
+  border: 1px solid var(--pink);
+  background-color: transparent;
+  transition: all .3s;
+}
+
+.sakada-universe > .cta-bta-outline:hover {
+  color: var(--white);
+  background-color: var(--pink);
 }
 
 .team {
@@ -420,10 +441,6 @@ main > .cta > .photos > .photo > img {
   display: flex;
   gap: 3rem;
   flex-direction: column;
-  /* border-radius: 1rem;
-  -webkit-box-shadow: 0px 0px 5px 0px var(--purple);
-  -moz-box-shadow: 0px 0px 5px 0px var(--purple);
-  box-shadow: 0px 0px 5px 0px var(--purple); */
 }
 
 .testimony > .feedbacks > .feedback > p {
