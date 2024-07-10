@@ -298,14 +298,14 @@ main > .cta > .photos > .photo > img {
 .sakada-universe > .cta-bta-outline {
   cursor: pointer;
   width: 500px;
-  height: 50px;
+  padding-block: 1rem;
   font-weight: 600;
   color: var(--pink);
   outline: none;
   border-radius: 10px;
   border: 1px solid var(--pink);
   background-color: transparent;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 .sakada-universe > .cta-bta-outline:hover {
@@ -316,15 +316,8 @@ main > .cta > .photos > .photo > img {
 .team {
   width: 100%;
   height: 100%;
-  color: var(--white);
-  background-color: var(--black);
   padding: 5rem;
-  color: var(--white);
-}
-
-.team {
-  width: 100%;
-  height: 100%;
+  color: var(--black);
   display: flex;
   gap: 10rem;
   align-items: center;
@@ -393,9 +386,28 @@ main > .cta > .photos > .photo > img {
   font-size: 2rem;
 }
 
+.team > .cta-button-filled {
+  cursor: pointer;
+  width: 500px;
+  padding-block: 1rem;
+  font-weight: 600;
+  color: var(--white);
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--pink);
+  transition: all 0.3s;
+}
+
+.team > .cta-button-filled:hover {
+  color: var(--pink);
+  border: 1px solid var(--pink);
+  background-color: transparent;
+}
+
 .clients {
   text-align: center;
-  padding: 10rem 5rem;
+  padding: 5rem;
 }
 
 .clients > h4 {
@@ -407,7 +419,6 @@ main > .cta > .photos > .photo > img {
   gap: 3rem;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
 }
 
 .clients > .clients-box > img {
@@ -423,7 +434,7 @@ main > .cta > .photos > .photo > img {
 
 .testimony {
   text-align: center;
-  padding: 10rem 0 10rem 5rem !important;
+  padding: 5rem 0 5rem 5rem !important;
 }
 
 .testimony > h4 {
