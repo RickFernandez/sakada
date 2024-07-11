@@ -60,7 +60,7 @@ main {
 
 .infos {
   display: flex;
-  gap: 5rem;
+  gap: 2rem;
   justify-content: center;
   flex-direction: column;
 }
