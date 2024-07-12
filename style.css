@@ -629,6 +629,14 @@ main > .cta > .photos > .photo > img {
     max-width: none;
   }
 
+  .clients > .clients-box {
+    justify-content: center;
+  }
+
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .team > .employees {
     grid-template-columns: 1fr;
   }
@@ -671,6 +679,10 @@ main > .cta > .photos > .photo > img {
     max-width: none;
   }
 
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
   .team > .employees > .employee {
     flex-wrap: wrap;
     height: fit-content;
@@ -679,6 +691,11 @@ main > .cta > .photos > .photo > img {
   .team > .employees > .employee > img {
     width: 100%;
     max-width: none;
+  }
+
+  .sakada-universe > .cta-bta-outline,
+  .team > .cta-button-filled {
+    width: 350px;
   }
 }
 
