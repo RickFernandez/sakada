@@ -25,7 +25,16 @@ h4 {
   width: 100%;
   height: 100%;
   min-height: 50vh;
-  background-color: var(--gray);
+  /* background-color: var(--gray); */
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-clip: border-box;
+  background-repeat: no-repeat;
+  background-image: url(../assets/images/square-example.png);
 }
 
 .back-btn {
@@ -37,8 +46,21 @@ h4 {
 
 .back-btn:hover,
 .back-btn:focus {
-  color: var(--pink);
   text-decoration: underline;
+}
+
+.infos {
+  width: 100%;
+  padding: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .project-infos {
@@ -86,6 +108,10 @@ h4 {
   color: var(--black);
   font-style: italic;
   text-align: end;
+}
+
+.client {
+  text-transform: uppercase;
 }
 
 .images {
