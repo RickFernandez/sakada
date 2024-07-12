@@ -530,7 +530,7 @@ main > .cta > .photos > .photo > img {
   grid-template-rows: repeat(2, 300px);
 }
 
-.projects > .project {
+.projects > .project-presentation {
   width: 100%;
   min-height: 250px;
   background-size: cover;
@@ -542,7 +542,7 @@ main > .cta > .photos > .photo > img {
   cursor: pointer;
 }
 
-.projects > .project::after {
+.projects > .project-presentation::after {
   position: absolute;
   content: 'Ver projeto';
   z-index: 1;
@@ -559,7 +559,7 @@ main > .cta > .photos > .photo > img {
   transition: all 0.3s;
 }
 
-.projects > .project:hover::after {
+.projects > .project-presentation:hover::after {
   transform: translateY(0);
 }
 
