@@ -263,6 +263,6 @@ header
     width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
   }
 }
