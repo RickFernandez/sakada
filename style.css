@@ -1,3 +1,8 @@
+h3, h4 {
+  text-transform: uppercase;
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 .site-wrapper {
   width: 100%;
   height: 100%;
@@ -292,7 +297,6 @@ main > .cta > .photos > .photo > img {
 .sakada-universe > .presentation > .texts > h3 {
   color: var(--black);
   margin-bottom: 4rem;
-  text-transform: uppercase;
 }
 
 .sakada-universe > .cta-bta-outline {
@@ -306,6 +310,7 @@ main > .cta > .photos > .photo > img {
   border: 1px solid var(--pink);
   background-color: transparent;
   transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .sakada-universe > .cta-bta-outline:hover {
@@ -327,7 +332,7 @@ main > .cta > .photos > .photo > img {
 .team > .founder > .texts > h6,
 .team > .employees > .employee > .texts > h6 {
   font-weight: 900;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .team > .founder {
@@ -397,6 +402,7 @@ main > .cta > .photos > .photo > img {
   border-radius: 10px;
   background-color: var(--pink);
   transition: all 0.3s;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .team > .cta-button-filled:hover {

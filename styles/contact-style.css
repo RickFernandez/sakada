@@ -133,11 +133,13 @@ main {
   display: flex;
   gap: 1rem;
   flex-direction: column;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 .link-email {
   font-size: 1.6rem;
   text-transform: none;
+  font-family: 'Roboto', sans-serif !important;
 }
 
 .title {
@@ -198,6 +200,7 @@ main {
 .address > span {
   font-weight: 800;
   font-size: 2rem !important;
+  font-family: 'Montserrat', sans-serif !important;
 }
 
 @media screen and (max-width: 1200px) {

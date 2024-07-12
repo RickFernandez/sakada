@@ -17,6 +17,7 @@ h3 {
 }
 
 h4 {
+  text-transform: none !important;
   margin-bottom: 1rem !important;
 }
 
