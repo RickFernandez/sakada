@@ -10,12 +10,12 @@ h3 {
   margin-bottom: 2rem !important;
 }
 
-.page-title > .title {
+.page-header > .title {
   color: var(--black);
   line-height: 8rem;
 }
 
-.page-title > .title > span {
+.page-header > .title > span {
   font-size: 6rem;
 }
 
@@ -51,7 +51,7 @@ h3 {
 }
 
 .btn:hover {
-  background-color: #c7317f30;
+  background-color: #cdcccc65;
 }
 
 .btn.active {
@@ -164,7 +164,7 @@ h3 {
     transition: display 500ms;
   }
 
-  .page-title > .title {
+  .page-header > .title {
     font-size: 6rem !important;
   }
 

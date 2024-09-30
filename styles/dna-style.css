@@ -21,7 +21,7 @@ h4 {
   margin-bottom: 1rem !important;
 }
 
-.page-title > .title {
+.page-header > .title {
   color: var(--pink);
 }
 

@@ -6,7 +6,7 @@ body:has(.navigation-container.opened) {
   overflow: hidden;
 }
 
-.page-title > .title {
+.page-header > .title {
   color: var(--green);
 }
 
@@ -82,7 +82,7 @@ body:has(.navigation-container.opened) {
 }
 
 @media screen and (max-width: 500px) {
-  .page-title > .title {
+  .page-header > .title {
     font-size: 6rem !important;
   }
 
