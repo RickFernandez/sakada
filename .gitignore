@@ -6,8 +6,7 @@ dist/
 
 # Ignorar arquivos de ambiente
 .env
-.env.local
-.env.*.local
+.env.*
 
 # Ignorar arquivos de log
 npm-debug.log*
