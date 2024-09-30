@@ -1,0 +1,25 @@
+# Ignorar diretório de dependências
+node_modules/
+
+# Ignorar diretório de build (criado pelo Vite)
+dist/
+
+# Ignorar arquivos de ambiente
+.env
+.env.local
+.env.*.local
+
+# Ignorar arquivos de log
+npm-debug.log*
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar caches do editor
+.vscode/
+.idea/
+*.swp
+
+# Ignorar arquivos do Vite
+.vite
