@@ -529,26 +529,22 @@ main > .cta > .photos > .photo > img {
   background: var(--pink) !important;
 }
 
-.projects {
+.home-projects {
   width: 100%;
   display: grid;
+  grid-template-rows: auto;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 300px);
 }
 
-.projects > .project-presentation {
+.home-projects > .project-presentation {
   width: 100%;
   min-height: 250px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-image: url(assets/images/square-example.png);
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
 
-.projects > .project-presentation::after {
+.home-projects > .project-presentation::after {
   position: absolute;
   content: 'Ver projeto';
   z-index: 1;
@@ -565,7 +561,7 @@ main > .cta > .photos > .photo > img {
   transition: all 0.3s;
 }
 
-.projects > .project-presentation:hover::after {
+.home-projects > .project-presentation:hover::after {
   transform: translateY(0);
 }
 
@@ -639,7 +635,7 @@ main > .cta > .photos > .photo > img {
     justify-content: center;
   }
 
-  .projects {
+  .home-projects {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -685,7 +681,7 @@ main > .cta > .photos > .photo > img {
     max-width: none;
   }
 
-  .projects {
+  .home-projects {
     grid-template-columns: 1fr;
   }
 
