@@ -1,35 +1,50 @@
 import API_ROUTES from '../apiConfig.js';
-import initializeProjectFilters from '../../../scripts/projects.js';
+import initializeProjectFilters, { setHomeProjects } from '../../scripts/project/projects.js';
+import { setTeam } from '../../scripts/team/team.js';
+import { setClients } from '../../scripts/client/clients.js';
 
 const pageService = {
   currentPageUrl: '',
 
-  loadPageData(url) {
-    this.showLoader();
+  async loadPageData(url) {
+    let apiUrl = `${API_ROUTES.pages}&filters[urlReference]=${url}`;
+    
+    if (url === '/' || url === '/index.html') {
+      apiUrl = `${API_ROUTES.pages}&filters[pageName]=Home`;
+    } else {
+      this.showLoader();
+    }
 
-    const apiUrl = `${API_ROUTES.pages}&filters[urlReference]=${url}`;
+    try {
+      const response = await fetch(apiUrl);
+      const data = await response.json();
+      const pageData = data.data[0]?.attributes;
 
-    return fetch(apiUrl)
-      .then(response => response.json())
-      .then(data => {
-        const pageData = data.data[0]?.attributes;
-        if (pageData) {
-          this.updatePageHeader(pageData);
-          if (url.includes('projects')) {
-            this.updateProjectsPage(pageData);
-          }
+      if (pageData) {
+        this.updatePageHeader(pageData);
+        
+        if (url === '/' || url === '/index.html') {
+          this.setHomePage(pageData);
+        } else if (url.includes('projects')) {
+          this.updateProjectsPage(pageData);
         }
-      })
-      .catch(error => console.error('Erro ao carregar os dados da página:', error))
-      .finally(() => {
+      }
+    } catch (error) {
+      console.error('Erro ao carregar os dados da página:', error);
+    } finally {
+      if (url !== '/' && url !== '/index.html') {
         this.hideLoader();
-        if (url.includes('projects')) {
-          initializeProjectFilters();
-        }
-      });
+      }
+      
+      if (url.includes('projects')) {
+        initializeProjectFilters();
+      }
+    }
   },
 
   updatePageHeader(pageData) {
+    if (pageData.pageHeader === null) { return; }
+
     const pageHeaderElement = document.querySelector('.page-header');
     const titleElement = pageHeaderElement.querySelector('.title');
 
@@ -54,6 +69,20 @@ const pageService = {
     pageHeaderElement.style.backgroundSize = 'cover';
 
     document.getElementById('page-content').style.display = 'block';
+  },
+
+  setHomePage(pageData) {
+    if (pageData.projects) {
+      setHomeProjects(pageData.projects);
+    }
+
+    if (pageData.team.employee) {
+      setTeam(pageData.team.employee);
+    }
+
+    if (pageData.clients.client) {
+      setClients(pageData.clients.client);
+    }
   },
 
   updateProjectsPage(pageData) {
@@ -143,6 +172,8 @@ const pageService = {
       const pageName = this.getPageNameFromUrl(url);
       this.currentPageUrl = pageName;
       this.loadPageData(pageName);
+    } else {
+      this.loadPageData(url);
     }
   },
 
