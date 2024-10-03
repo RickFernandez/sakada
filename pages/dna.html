@@ -1,292 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DNA - SAKADA DESIGN</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DNA - SAKADA DESIGN</title>
+    <link rel="stylesheet" href="../styles/shared/global-style.css" />
+    <link rel="stylesheet" href="../styles/dna-style.css" />
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../styles/shared/header-style.css" />
+    <link rel="stylesheet" href="../styles/shared/footer-style.css" />
 
-  <link rel="stylesheet" href="../styles/shared/global-style.css" />
-  <link rel="stylesheet" href="../styles/dna-style.css" />
-  <link rel="stylesheet" href="../style.css" />
-  <link rel="stylesheet" href="../styles/shared/header-style.css" />
-  <link rel="stylesheet" href="../styles/shared/footer-style.css" />
+    <script src="../main.js" defer></script>
+  </head>
 
-  <script src="../main.js" defer></script>
-</head>
+  <body>
+    <div id="loader-overlay" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
 
-<body>
-  <div id="loader-overlay" class="loader-overlay">
-    <div class="loader"></div>
-  </div>
+    <div id="page-content" style="display: none">
+      <header>
+        <div class="fixed-menu styled">
+          <a href="../index.html">
+            <img
+              class="logo"
+              src="../assets/icons/logo.svg"
+              alt="Logo Sakada Design"
+            />
+            <img
+              class="white-logo"
+              src="../assets/icons/white-logo.svg"
+              alt="Logo Sakada Design"
+            />
+          </a>
 
-  <div id="page-content" style="display: none;">
-    <header>
-      <div class="fixed-menu styled">
-        <a href="../index.html">
-          <img class="logo" src="../assets/icons/logo.svg" alt="Logo Sakada Design" />
-          <img class="white-logo" src="../assets/icons/white-logo.svg" alt="Logo Sakada Design" />
-        </a>
+          <button class="btn-menu" onClick="onMenu()">
+            <img
+              class="open-menu-icon"
+              src="../assets/icons/open-menu-icon.svg"
+              alt="Open menu icon"
+            />
+            <img
+              class="close-menu-icon"
+              src="../assets/icons/close-menu-icon.svg"
+              alt="Open menu icon"
+            />
+          </button>
+        </div>
 
-        <button class="btn-menu" onClick="onMenu()">
-          <img class="open-menu-icon" src="../assets/icons/open-menu-icon.svg" alt="Open menu icon" />
-          <img class="close-menu-icon" src="../assets/icons/close-menu-icon.svg" alt="Open menu icon" />
-        </button>
-      </div>
+        <div id="navigation" class="navigation-container">
+          <nav class="menu-navigation">
+            <ul>
+              <li>
+                <a href="../index.html">
+                  Hello
+                  <br />
+                  <span>Tudo começa aqui</span>
+                </a>
+                <a href="digital-signage.html">
+                  Digital Signage
+                  <br />
+                  <span>texto vai aqui</span>
+                </a>
+                <a href="dna.html">
+                  Dna
+                  <br />
+                  <span>texto vai aqui</span>
+                </a>
+                <a href="digital-projects.html">
+                  Digital Projects
+                  <br />
+                  <span>texto vai aqui</span>
+                </a>
+                <a href="branding-projects.html">
+                  Branding Projects
+                  <br />
+                  <span>texto vai aqui</span>
+                </a>
+                <a href="contact.html">
+                  Contact
+                  <br />
+                  <span>texto vai aqui</span>
+                </a>
+              </li>
+            </ul>
+            <div class="social-medias-links">
+              <a
+                href="https://wa.me/5521993277255?text=Ol%C3%A1,%20vim%20pelo%20site!"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/whatsapp-icon.svg"
+                  alt="WhatsApp link"
+                />
+              </a>
+              <a href="https://www.instagram.com/sakadadesign/" target="_blank">
+                <img
+                  src="../assets/icons/social-medias/intagram-icon.svg"
+                  alt="Instagram profile link"
+                />
+              </a>
+              <a
+                href="https://www.facebook.com/sakadadesigneideias"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/facebook-icon.svg"
+                  alt="Facebook profile link"
+                />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/5259071/admin/feed/posts/"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/linkedin-icon.svg"
+                  alt="Linkedin profile link"
+                />
+              </a>
+              <a
+                href="https://www.tiktok.com/@sakadadesign?_t=8n695PlUJs6&_r=1"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/tiktok-icon.svg"
+                  alt="TikTok profile link"
+                />
+              </a>
+            </div>
+          </nav>
+        </div>
+      </header>
 
-      <div id="navigation" class="navigation-container">
-        <nav class="menu-navigation">
+      <main>
+        <div class="page-header">
+          <h2 class="title"></h2>
+        </div>
+
+        <section class="wrapper">
+          <div class="brand-container brand-core">
+            <h3 class="subtitle-2">
+              Brand
+              <br />
+              Core
+            </h3>
+            <div class="contents">
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Brand Architecture</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Brand Purpose & Position</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Content Strategy</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Media Planning</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-container brand-experience">
+            <h3 class="subtitle-2">
+              Brand
+              <br />
+              Experience
+            </h3>
+            <div class="contents">
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Brand Identity & Naming</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Content Development</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Employee Engagement</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="brand-container brand-core">
+            <h3 class="subtitle-2">
+              Brand
+              <br />
+              Execution
+            </h3>
+            <div class="contents">
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Post Production</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Print Production</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+              <div class="content">
+                <div class="content-img">
+                  <img src="../assets/images/example-2.png" alt="" />
+                </div>
+                <div class="texts">
+                  <h4 class="dna-subtitle">Packing Design</h4>
+                  <p class="text">
+                    Nossa meta é propor ideias com perspectiva, criatividade e
+                    inovação, gerando assim, soluções personalizadas e melhores
+                    resultados para o seu negócio.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p class="text">@ 2024 SAKADA DESIGN. Todos os direitos reservados.</p>
+
+        <nav>
           <ul>
             <li>
-              <a href="../index.html">
-                Hello
-                <br />
-                <span>Tudo começa aqui</span>
+              <a
+                href="https://wa.me/5521993277255?text=Ol%C3%A1,%20vim%20pelo%20site!"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/whatsapp-icon.svg"
+                  alt="WhatsApp link"
+                />
               </a>
-              <a href="digital-signage.html">
-                Digital Signage
-                <br />
-                <span>texto vai aqui</span>
+              <a href="https://www.instagram.com/sakadadesign/" target="_blank">
+                <img
+                  src="../assets/icons/social-medias/intagram-icon.svg"
+                  alt="Instagram profile link"
+                />
               </a>
-              <a href="dna.html">
-                Dna
-                <br />
-                <span>texto vai aqui</span>
+              <a
+                href="https://www.facebook.com/sakadadesigneideias"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/facebook-icon.svg"
+                  alt="Facebook profile link"
+                />
               </a>
-              <a href="digital-projects.html">
-                Digital Projects
-                <br />
-                <span>texto vai aqui</span>
+              <a
+                href="https://www.linkedin.com/company/5259071/admin/feed/posts/"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/linkedin-icon.svg"
+                  alt="Linkedin profile link"
+                />
               </a>
-              <a href="branding-projects.html">
-                Branding Projects
-                <br />
-                <span>texto vai aqui</span>
-              </a>
-              <a href="contact.html">
-                Contact
-                <br />
-                <span>texto vai aqui</span>
+              <a
+                href="https://www.tiktok.com/@sakadadesign?_t=8n695PlUJs6&_r=1"
+                target="_blank"
+              >
+                <img
+                  src="../assets/icons/social-medias/tiktok-icon.svg"
+                  alt="TikTok profile link"
+                />
               </a>
             </li>
           </ul>
-          <div class="social-medias-links">
-            <a href="https://wa.me/5521993277255?text=Ol%C3%A1,%20vim%20pelo%20site!" target="_blank">
-              <img src="../assets/icons/social-medias/whatsapp-icon.svg" alt="WhatsApp link" />
-            </a>
-            <a href="https://www.instagram.com/sakadadesign/" target="_blank">
-              <img src="../assets/icons/social-medias/intagram-icon.svg" alt="Instagram profile link" />
-            </a>
-            <a href="https://www.facebook.com/sakadadesigneideias" target="_blank">
-              <img src="../assets/icons/social-medias/facebook-icon.svg" alt="Facebook profile link" />
-            </a>
-            <a href="https://www.linkedin.com/company/5259071/admin/feed/posts/" target="_blank">
-              <img src="../assets/icons/social-medias/linkedin-icon.svg" alt="Linkedin profile link" />
-            </a>
-            <a href="https://www.tiktok.com/@sakadadesign?_t=8n695PlUJs6&_r=1" target="_blank">
-              <img src="../assets/icons/social-medias/tiktok-icon.svg" alt="TikTok profile link" />
-            </a>
-          </div>
         </nav>
-      </div>
-    </header>
+      </footer>
+    </div>
 
-    <main>
-      <div class="page-header">
-        <h2 class="title"></h2>
-      </div>
-
-      <section class="wrapper">
-        <div class="brand-container brand-core">
-          <h3 class="subtitle-2">
-            Brand
-            <br />
-            Core
-          </h3>
-          <div class="contents">
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Brand Architecture</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Brand Purpose & Position</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Content Strategy</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Media Planning</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="brand-container brand-experience">
-          <h3 class="subtitle-2">
-            Brand
-            <br />
-            Experience
-          </h3>
-          <div class="contents">
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Brand Identity & Naming</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Content Development</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Employee Engagement</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="brand-container brand-core">
-          <h3 class="subtitle-2">
-            Brand
-            <br />
-            Execution
-          </h3>
-          <div class="contents">
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Post Production</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Print Production</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-            <div class="content">
-              <div class="content-img">
-                <img src="../assets/images/example-2.png" alt="" />
-              </div>
-              <div class="texts">
-                <h4 class="dna-subtitle">Packing Design</h4>
-                <p class="text">
-                  Nossa meta é propor ideias com perspectiva, criatividade e
-                  inovação, gerando assim, soluções personalizadas e melhores
-                  resultados para o seu negócio.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p class="text">@ 2024 SAKADA DESIGN. Todos os direitos reservados.</p>
-
-      <nav>
-        <ul>
-          <li>
-            <a href="https://wa.me/5521993277255?text=Ol%C3%A1,%20vim%20pelo%20site!" target="_blank">
-              <img src="../assets/icons/social-medias/whatsapp-icon.svg" alt="WhatsApp link" />
-            </a>
-            <a href="https://www.instagram.com/sakadadesign/" target="_blank">
-              <img src="../assets/icons/social-medias/intagram-icon.svg" alt="Instagram profile link" />
-            </a>
-            <a href="https://www.facebook.com/sakadadesigneideias" target="_blank">
-              <img src="../assets/icons/social-medias/facebook-icon.svg" alt="Facebook profile link" />
-            </a>
-            <a href="https://www.linkedin.com/company/5259071/admin/feed/posts/" target="_blank">
-              <img src="../assets/icons/social-medias/linkedin-icon.svg" alt="Linkedin profile link" />
-            </a>
-            <a href="https://www.tiktok.com/@sakadadesign?_t=8n695PlUJs6&_r=1" target="_blank">
-              <img src="../assets/icons/social-medias/tiktok-icon.svg" alt="TikTok profile link" />
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </footer>
-  </div>
-
-  <script src="../src/api/services/pageService.js" type="module"></script>
-</body>
-
+    <script
+      src="../src/api/services/page/pageService.js"
+      type="module"
+    ></script>
+  </body>
 </html>
