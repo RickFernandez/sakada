@@ -17,6 +17,10 @@
     />
   </head>
   <body>
+    <div id="loader-overlay" class="loader-overlay">
+      <div class="loader"></div>
+    </div>
+
     <header>
       <div class="fixed-menu styled">
         <a href="../index.html">
@@ -132,14 +136,14 @@
 
     <main>
       <div class="container">
-        <a href="/pages/digital-projects.html" class="back-btn text">< Voltar</a>
-        <section class="infos">
-          <h2 class="title">Project 01</h2>
+        <a href="../index.html" class="back-btn text"> &lt; Voltar</a>
+        <section class="header">
+          <h2 class="title">Project</h2>
           <div class="project-infos">
             <div class="texts">
-              <span class="client text">Cliente tal</span>
+              <span class="client text">Cliente</span>
               <span class="design-animation text"
-                >Design e Animação // Sakada</span
+                >Design e Animação</span
               >
             </div>
           </div>
@@ -148,17 +152,17 @@
 
       <section class="project">
         <video
-          class="project-video"
+          class="presentation-media"
           src="../assets/videos/intitucional-video.mp4"
           controls
           preload="auto"
         ></video>
 
-        <div class="challenge">
+        <div class="challenge-container">
           <div class="texts">
             <div class="description">
-              <h4 class="subtitle-2">Desafio</h4>
-              <p class="text">
+              <h4 class="subtitle-2">Challenge</h4>
+              <p class="challenge-text text">
                 Nossa meta é propor ideias com perspectiva, criatividade e
                 inovação, gerando assim, soluções personalizadas e melhores
                 resultados para o seu negócio.
@@ -171,27 +175,27 @@
                 para nossa equipe e clientes.
               </p>
             </div>
-            <p class="text">
+            <p class="challenge-slogan-1 text">
               “Nossa meta é propor ideias com perspectiva, criatividade e
               inovação, gerando assim, soluções personalizadas e melhores
               resultados para o seu negócio.”
             </p>
           </div>
-          <div class="images">
+          <div class="challenge-medias images">
             <img src="../assets/images/example-2.png" alt="" />
             <img src="../assets/images/example-2.png" alt="" />
           </div>
-          <p class="img-description">
+          <p class="challenge-slogan-2">
             Nossa meta é propor ideias com perspectiva, criatividade e inovação,
             gerando assim, soluções personalizadas e melhores resultados para o
             seu negócio.
           </p>
         </div>
 
-        <div class="solution">
-          <h4 class="subtitle-2">Solução</h4>
+        <div class="solution-container">
+          <h4 class="subtitle-2">Solution</h4>
           <div class="description">
-            <p class="left-text text">
+            <p class="solution-text-1 left-text text">
               Nossa meta é propor ideias com perspectiva, criatividade e
               inovação, gerando assim, soluções personalizadas e melhores
               resultados para o seu negócio.
@@ -202,7 +206,7 @@
               divertimos e aprendemos. Cada detalhe foi pensado para estimular a
               criatividade e propiciar comodidade para nossa equipe e clientes.
             </p>
-            <p class="right-text text">
+            <p class="solution-text-2 right-text text">
               Nossa meta é propor ideias com perspectiva, criatividade e
               inovação, gerando assim, soluções personalizadas e melhores
               resultados para o seu negócio.
@@ -215,7 +219,7 @@
             </p>
           </div>
           <img
-            class="solution-img"
+            class="solution-media"
             src="../assets/images/example-2.png"
             alt=""
           />
@@ -224,7 +228,7 @@
         <div class="testimony">
           <div class="feedback">
             <img
-              class="person-image"
+              class="picture"
               src="../assets/images/profile-image-example.svg"
               alt=""
             />
@@ -243,7 +247,7 @@
               </div>
             </div>
           </div>
-          <div class="testimony-img">
+          <div class="testimony-medias">
             <img src="../assets/images/example-2.png" alt="" />
             <img src="../assets/images/example-2.png" alt="" />
           </div>
@@ -305,5 +309,9 @@
     </footer>
 
     <script src="../main.js"></script>
+    <script type="module">
+      import projectService from '../src/api/services/project/projectService.js';
+      projectService.loadProjectData();
+    </script>
   </body>
 </html>

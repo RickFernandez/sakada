@@ -121,6 +121,13 @@ export function setHomeProjects(projects) {
     projectElement.style.backgroundPosition = 'center';
     projectElement.style.backgroundSize = 'cover';
 
+    projectElement.addEventListener('click', (event) => {
+      event.preventDefault();
+      const referringPage = '/';
+      
+      window.location.href = `/pages/project?projectName=${project.attributes.referenceUrl}&referrer=${referringPage}`;
+    });
+
     homeProjectsSection.appendChild(projectElement);
   });
 }
