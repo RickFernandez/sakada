@@ -96,7 +96,8 @@ const pageService = {
     const filterMobileContainer = document.querySelector('.filter-mobile .filter-options');
 
     filterContainer.innerHTML = '';
-    filterMobileContainer.innerHTML = '<div class="filter-header"><span>Filter</span><img class="close-filter-btn" src="/assets/icons/close-menu-icon.svg" alt="" /></div>';
+    filterMobileContainer.innerHTML = 
+      '<div class="filter-header"><span>Filter</span><img class="close-filter-btn" src="/assets/icons/close-menu-icon.svg" alt="" /></div>';
 
     this.createFilterButton(filterContainer, 'all', 'All');
     this.createFilterButton(filterMobileContainer, 'all', 'All');
@@ -124,15 +125,15 @@ const pageService = {
     projects.data.forEach(project => {
       const projectElement = document.createElement('div');
       projectElement.className = 'project';
+      projectElement.style.backgroundImage = `url(${project.attributes.wallpaperMedia.data?.attributes.url || ''})`;
+      projectElement.style.backgroundRepeat = 'no-repeat';
+      projectElement.style.backgroundPosition = 'center';
+      projectElement.style.backgroundSize = 'cover';
 
       const filters = project.attributes.project_filters.data.map(filter =>
         filter.attributes.name.toLowerCase().replace(/ /g, '-')
       );
       projectElement.classList.add(...filters);
-
-      const imgElement = document.createElement('img');
-      imgElement.src = project.attributes.wallpaperMedia.data?.attributes.url || '';
-      imgElement.alt = '';
 
       const viewProjectElement = document.createElement('div');
       viewProjectElement.className = 'view-project';
@@ -156,7 +157,6 @@ const pageService = {
 
       viewProjectElement.appendChild(linkElement);
       viewProjectElement.appendChild(arrowImgElement);
-      projectElement.appendChild(imgElement);
       projectElement.appendChild(viewProjectElement);
 
       projectsContainer.appendChild(projectElement);
