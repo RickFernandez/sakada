@@ -49,7 +49,7 @@ h4 {
   text-decoration: underline;
 }
 
-.infos {
+.header {
   width: 100%;
   padding: 5rem;
   display: flex;
@@ -86,13 +86,13 @@ h4 {
   background-color: var(--pink);
 }
 
-.project > .project-video {
+.project > .presentation-media {
   z-index: 1;
   width: 100%;
   margin-top: -30%;
 }
 
-.challenge {
+.challenge-container {
   display: flex;
   gap: 5rem;
   flex-direction: column;
@@ -105,7 +105,7 @@ h4 {
 }
 
 .texts > p {
-  color: var(--black);
+  color: var(--white);
   font-style: italic;
   text-align: end;
 }
@@ -124,18 +124,18 @@ h4 {
   width: 100%;
 }
 
-.img-description {
+.challenge-slogan-2 {
   font-size: 3rem;
   font-style: italic;
   text-transform: uppercase;
 }
 
-.solution > .description {
+.solution-container > .description {
   display: flex;
   gap: 6.5rem;
 }
 
-.solution-img {
+.solution-media {
   width: 100%;
   margin-top: 10rem;
 }
@@ -152,9 +152,10 @@ h4 {
   align-items: center;
 }
 
-.person-image {
+.picture {
   width: 100%;
   max-width: 20rem;
+  border-radius: 50%;
 }
 
 .feedback > .texts {
@@ -169,7 +170,7 @@ h4 {
 }
 
 .person-infos > span {
-  color: var(--black);
+  color: var(--white);
   font-weight: 800 !important;
 }
 
@@ -177,14 +178,20 @@ span.separator {
   margin-inline: 1rem;
 }
 
-.testimony-img {
+.testimony-medias {
   display: flex;
   gap: 5rem;
   align-items: center;
 }
 
-.testimony-img > img {
+.testimony-medias > img {
   width: 100%;
+}
+
+@media screen and (min-width: 1920px) {
+  .project {
+    padding-block: 10%;
+  }
 }
 
 @media screen and (max-width: 1200px) {
@@ -193,14 +200,14 @@ span.separator {
     padding-inline: 10rem;
   }
 
-  .project > .project-video {
+  .project > .presentation-media {
     margin-top: -40%;
   }
 }
 
 @media screen and (max-width: 1024px) {
   .images > img,
-  .testimony-img > img {
+  .testimony-medias > img {
     width: 50%;
   }
 }
@@ -230,7 +237,7 @@ span.separator {
     padding-inline: 5rem;
   }
 
-  .project > .project-video {
+  .project > .presentation-media {
     margin-top: -50%;
   }
 
@@ -243,26 +250,26 @@ span.separator {
   }
 
   .images,
-  .testimony-img {
+  .testimony-medias {
     display: flex;
     gap: 3rem;
     flex-direction: column;
   }
 
   .images > img,
-  .testimony-img > img {
+  .testimony-medias > img {
     width: 100%;
   }
 
-  .solution > .description {
+  .solution-container > .description {
     flex-direction: column;
   }
 
-  .solution-img {
+  .solution-media {
     margin-top: 5rem;
   }
 
-  .person-image {
+  .picture {
     width: 85%;
   }
 
@@ -303,7 +310,7 @@ span.separator {
     padding-bottom: 5rem !important;
   }
 
-  .img-description {
+  .challenge-slogan-2 {
     font-size: 2.4rem;
     line-height: 3rem;
   }
@@ -313,7 +320,7 @@ span.separator {
     flex-direction: column;
   }
 
-  .person-image {
+  .picture {
     width: 40%;
   }
 
