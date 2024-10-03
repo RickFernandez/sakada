@@ -68,7 +68,7 @@ h3 {
   display: grid;
   gap: 2rem;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-auto-rows: max-content;
+  grid-auto-rows: 300px;
 }
 
 .project {
@@ -76,7 +76,7 @@ h3 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: fit-content;
+  height: 100%;
   text-align: center;
 }
 
@@ -115,7 +115,7 @@ h3 {
 }
 
 .project:hover > .view-project {
-  bottom: 3px;
+  bottom: 0;
 }
 
 .show {
