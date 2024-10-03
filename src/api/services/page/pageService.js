@@ -1,7 +1,8 @@
-import API_ROUTES from '../apiConfig.js';
-import initializeProjectFilters, { setHomeProjects } from '../../scripts/project/projects.js';
-import { setTeam } from '../../scripts/team/team.js';
-import { setClients } from '../../scripts/client/clients.js';
+import API_ROUTES from '../../apiConfig.js';
+import initializeProjectFilters, { setHomeProjects } from '../../../scripts/project/projects.js';
+import { setTeam } from '../../../scripts/team/team.js';
+import { setClients } from '../../../scripts/client/clients.js';
+import projectService from '../project/projectService.js';
 
 const pageService = {
   currentPageUrl: '',
@@ -140,6 +141,15 @@ const pageService = {
       linkElement.href = project.attributes.referenceUrl || '#';
       linkElement.textContent = 'Ver Projeto';
 
+      linkElement.addEventListener('click', (event) => {
+        event.preventDefault();
+        const referringPage = window.location.pathname.includes('digital-projects') ? 'digital-projects.html' :
+                              window.location.pathname.includes('branding-projects') ? 'branding-projects.html' :
+                              'index.html';
+        
+        window.location.href = `/pages/project.html?projectName=${project.attributes.referenceUrl}&referrer=${referringPage}`;
+      });
+
       const arrowImgElement = document.createElement('img');
       arrowImgElement.src = '../assets/icons/arrow-right-icon.svg';
       arrowImgElement.alt = '';
@@ -155,12 +165,16 @@ const pageService = {
 
   showLoader() {
     const loaderOverlay = document.getElementById('loader-overlay');
-    loaderOverlay.style.display = 'flex';
+    if (loaderOverlay) {
+      loaderOverlay.style.display = 'flex';
+    }
   },
 
   hideLoader() {
     const loaderOverlay = document.getElementById('loader-overlay');
-    loaderOverlay.style.display = 'none';
+    if (loaderOverlay) {
+      loaderOverlay.style.display = 'none';
+    }
   },
 
   getPageNameFromUrl(url) {
