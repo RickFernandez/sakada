@@ -1,54 +1,71 @@
 import API_ROUTES from '../../apiConfig.js';
-import initializeProjectFilters, { setHomeProjects } from '../../../scripts/project/projects.js';
-import { setTeam } from '../../../scripts/team/team.js';
-import { setClients } from '../../../scripts/client/clients.js';
-import projectService from '../project/projectService.js';
+import dnaService from '../dna/dnaService.js';
+import homeService from '../home/homeService.js';
+import initializeProjectFilters from '../../../scripts/filter-project/filter-projects.js';
+import digitalSignageService from '../digital-signage/digitalSignageService.js';
+import brandingAndDigitalProjectsService from '../branding-and-digital-projects/brandingAndDigitalProjectsService.js';
 
 const pageService = {
   currentPageUrl: '',
+  isHomePage: false,
 
   async loadPageData(url) {
-    let apiUrl = `${API_ROUTES.pages}&filters[urlReference]=${url}`;
-    
-    if (url === '/' || url === '/index.html') {
-      apiUrl = `${API_ROUTES.pages}&filters[pageName]=Home`;
-    } else {
-      this.showLoader();
-    }
+    let apiUrl = this.getApiUrl(url);
+    if (!apiUrl) return;
 
     try {
+      this.toggleLoader(true);
       const response = await fetch(apiUrl);
       const data = await response.json();
       const pageData = data.data[0]?.attributes;
 
       if (pageData) {
         this.updatePageHeader(pageData);
-        
-        if (url === '/' || url === '/index.html') {
-          this.setHomePage(pageData);
-        } else if (url.includes('projects')) {
-          this.updateProjectsPage(pageData);
-        }
+        this.routePage(url, pageData);
       }
     } catch (error) {
       console.error('Erro ao carregar os dados da página:', error);
     } finally {
-      if (url !== '/' && url !== '/index.html') {
-        this.hideLoader();
-      }
-      
+      this.toggleLoader(false);
       if (url.includes('projects')) {
         initializeProjectFilters();
       }
     }
   },
 
+  getApiUrl(url) {
+    if (this.isHomePage) {
+      return `${API_ROUTES.pages}&filters[pageName]=Home`;
+    } else {
+      return `${API_ROUTES.pages}&filters[urlReference]=${url}`;
+    }
+  },
+
+  routePage(url, pageData) {
+    if (!url.includes('projects')) {
+      switch(url) {
+        case '/' || '/index.html':
+          homeService.setHomePage(pageData);
+          break;
+  
+        case 'digital-signage':
+          digitalSignageService.setDigitalSignagePage(pageData);
+          break;
+
+        case 'dna':
+          dnaService.setDnaPage(pageData);
+          break;
+      }
+    }
+    
+    brandingAndDigitalProjectsService.setProjectsPage(pageData);
+  },
+
   updatePageHeader(pageData) {
-    if (pageData.pageHeader === null) { return; }
+    if (!pageData.pageHeader) return;
 
     const pageHeaderElement = document.querySelector('.page-header');
     const titleElement = pageHeaderElement.querySelector('.title');
-
     const title = pageData.pageHeader.title;
 
     if (title.toLowerCase().includes('projects')) {
@@ -72,123 +89,21 @@ const pageService = {
     document.getElementById('page-content').style.display = 'block';
   },
 
-  setHomePage(pageData) {
-    if (pageData.projects) {
-      setHomeProjects(pageData.projects);
-    }
-
-    if (pageData.team.employee) {
-      setTeam(pageData.team.employee);
-    }
-
-    if (pageData.clients.client) {
-      setClients(pageData.clients.client);
-    }
-  },
-
-  updateProjectsPage(pageData) {
-    this.generateProjectFilters(pageData.project_filters);
-    this.generateProjects(pageData.projects);
-  },
-
-  generateProjectFilters(filters) {
-    const filterContainer = document.querySelector('.filter');
-    const filterMobileContainer = document.querySelector('.filter-mobile .filter-options');
-
-    filterContainer.innerHTML = '';
-    filterMobileContainer.innerHTML = 
-      '<div class="filter-header"><span>Filter</span><img class="close-filter-btn" src="/assets/icons/close-menu-icon.svg" alt="" /></div>';
-
-    this.createFilterButton(filterContainer, 'all', 'All');
-    this.createFilterButton(filterMobileContainer, 'all', 'All');
-
-    filters.data.forEach(filter => {
-      const filterName = filter.attributes.name.toLowerCase().replace(/ /g, '-');
-      this.createFilterButton(filterContainer, filterName, filter.attributes.name);
-      this.createFilterButton(filterMobileContainer, filterName, filter.attributes.name);
-    });
-  },
-
-  createFilterButton(container, filterName, displayName) {
-    const button = document.createElement('button');
-    button.className = container.classList.contains('filter-options') ? 'btn-mobile' : 'btn';
-    button.setAttribute('data-filter', filterName);
-    button.textContent = displayName;
-    container.appendChild(button);
-  },
-
-  generateProjects(projects) {
-    const projectsContainer = document.querySelector('.projects');
-
-    projectsContainer.innerHTML = '';
-
-    projects.data.forEach(project => {
-      const projectElement = document.createElement('div');
-      projectElement.className = 'project';
-      projectElement.style.backgroundImage = `url(${project.attributes.wallpaperMedia.data?.attributes.url || ''})`;
-      projectElement.style.backgroundRepeat = 'no-repeat';
-      projectElement.style.backgroundPosition = 'center';
-      projectElement.style.backgroundSize = 'cover';
-
-      const filters = project.attributes.project_filters.data.map(filter =>
-        filter.attributes.name.toLowerCase().replace(/ /g, '-')
-      );
-      projectElement.classList.add(...filters);
-
-      const viewProjectElement = document.createElement('div');
-      viewProjectElement.className = 'view-project';
-
-      const linkElement = document.createElement('a');
-      linkElement.href = project.attributes.referenceUrl || '#';
-      linkElement.textContent = 'Ver Projeto';
-
-      linkElement.addEventListener('click', (event) => {
-        event.preventDefault();
-        const referringPage = window.location.pathname.includes('digital-projects') ? 'digital-projects.html' :
-                              window.location.pathname.includes('branding-projects') ? 'branding-projects.html' :
-                              'index.html';
-        
-        window.location.href = `/pages/project.html?projectName=${project.attributes.referenceUrl}&referrer=${referringPage}`;
-      });
-
-      const arrowImgElement = document.createElement('img');
-      arrowImgElement.src = '../assets/icons/arrow-right-icon.svg';
-      arrowImgElement.alt = '';
-
-      viewProjectElement.appendChild(linkElement);
-      viewProjectElement.appendChild(arrowImgElement);
-      projectElement.appendChild(viewProjectElement);
-
-      projectsContainer.appendChild(projectElement);
-    });
-  },
-
-  showLoader() {
+  toggleLoader(show) {
     const loaderOverlay = document.getElementById('loader-overlay');
     if (loaderOverlay) {
-      loaderOverlay.style.display = 'flex';
+      loaderOverlay.style.display = show ? 'flex' : 'none';
     }
-  },
-
-  hideLoader() {
-    const loaderOverlay = document.getElementById('loader-overlay');
-    if (loaderOverlay) {
-      loaderOverlay.style.display = 'none';
-    }
-  },
-
-  getPageNameFromUrl(url) {
-    return url.replace('/pages/', '').replace('.html', '');
   },
 
   handleNavigation(url) {
-    if (url !== '/' && url !== '/index.html') {
-      const pageName = this.getPageNameFromUrl(url);
-      this.currentPageUrl = pageName;
-      this.loadPageData(pageName);
-    } else {
-      this.loadPageData(url);
-    }
+    this.currentPageUrl = !this.isHomePage ? this.getPageNameFromUrl(url) : url;
+    this.loadPageData(this.currentPageUrl);
+  },
+
+  getPageNameFromUrl(url) {
+    this.isHomePage = (url === '/' || url === '/index.html');
+    return url.replace('/pages/', '').replace('.html', '');
   },
 
   init() {
