@@ -108,26 +108,3 @@ export default function initializeProjectFilters() {
     }
   }
 }
-
-export function setHomeProjects(projects) {
-  const homeProjectsSection = document.querySelector('.home-projects');
-
-  projects.data.forEach(project => {
-    const projectElement = document.createElement('a');
-    projectElement.className = 'project-presentation text';
-    projectElement.href = project.attributes.referenceUrl || '#';
-    projectElement.style.backgroundImage = `url(${project.attributes.wallpaperMedia.data?.attributes.url || ''})`;
-    projectElement.style.backgroundRepeat = 'no-repeat';
-    projectElement.style.backgroundPosition = 'center';
-    projectElement.style.backgroundSize = 'cover';
-
-    projectElement.addEventListener('click', (event) => {
-      event.preventDefault();
-      const referringPage = '/';
-      
-      window.location.href = `/pages/project?projectName=${project.attributes.referenceUrl}&referrer=${referringPage}`;
-    });
-
-    homeProjectsSection.appendChild(projectElement);
-  });
-}
