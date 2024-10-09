@@ -1,9 +1,9 @@
-import API_ROUTES from '../../apiConfig.js';
-import dnaService from '../dna/dnaService.js';
-import homeService from '../home/homeService.js';
-import initializeProjectFilters from '../../../scripts/filter-project/filter-projects.js';
-import digitalSignageService from '../digital-signage/digitalSignageService.js';
-import brandingAndDigitalProjectsService from '../branding-and-digital-projects/brandingAndDigitalProjectsService.js';
+import API_ROUTES from '/src/api/apiConfig';
+import dnaService from '/src/api/services/dna/dnaService';
+import homeService from '/src/api/services/home/homeService';
+import initializeProjectFilters from '/src/scripts/filter-projects/filter-projects';
+import digitalSignageService from '/src/api/services/digital-signage/digitalSignageService';
+import brandingAndDigitalProjectsService from '/src/api/services/branding-and-digital-projects/brandingAndDigitalProjectsService';
 
 const pageService = {
   currentPageUrl: '',
@@ -42,23 +42,31 @@ const pageService = {
   },
 
   routePage(url, pageData) {
-    if (!url.includes('projects')) {
       switch(url) {
-        case '/' || '/index.html':
+        case '':
+          homeService.setHomePage(pageData);
+          break;
+  
+        case '/':
           homeService.setHomePage(pageData);
           break;
   
         case 'digital-signage':
           digitalSignageService.setDigitalSignagePage(pageData);
           break;
-
+  
         case 'dna':
           dnaService.setDnaPage(pageData);
           break;
+
+        case 'digital-projects':
+          brandingAndDigitalProjectsService.setProjectsPage(pageData);
+          break;
+
+        case 'branding-projects':
+          brandingAndDigitalProjectsService.setProjectsPage(pageData);
+          break;
       }
-    }
-    
-    brandingAndDigitalProjectsService.setProjectsPage(pageData);
   },
 
   updatePageHeader(pageData) {
@@ -103,7 +111,11 @@ const pageService = {
 
   getPageNameFromUrl(url) {
     this.isHomePage = (url === '/' || url === '/index.html');
-    return url.replace('/pages/', '').replace('.html', '');
+    
+    const parts = url.split('/');
+    const lastPart = parts.pop() || '';
+  
+    return lastPart.replace('.html', '');
   },
 
   init() {

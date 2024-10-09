@@ -1,4 +1,4 @@
-import API_ROUTES from '../../apiConfig';
+import API_ROUTES from '/src/api/apiConfig';
 
 const projectService = {
   async loadProjectData() {
