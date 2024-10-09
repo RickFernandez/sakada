@@ -46,7 +46,7 @@ h3 {
   outline: none;
   border-radius: 2rem;
   border: 1px solid var(--white);
-  background-color: var(--puple);
+  background-color: var(--purple);
   transition: all 300ms;
 }
 
@@ -76,7 +76,7 @@ h3 {
   position: relative;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  height: 100;
   text-align: center;
 }
 
@@ -102,7 +102,7 @@ h3 {
   justify-content: center;
 }
 
-.view-project > a {
+.view-project > span {
   font-size: 1.8rem;
   color: var(--white);
   text-decoration: none;

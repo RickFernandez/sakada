@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DIGITAL PROJECTS - SAKADA DESIGN</title>
+
+  <link rel="stylesheet" href="/src/styles/shared/global-style.css" />
+  <link rel="stylesheet" href="/src/styles/digital-projects/digital-projects-style.css" />
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="/src/styles/shared/header-style.css" />
+  <link rel="stylesheet" href="/src/styles/shared/footer-style.css" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;800;900&family=Montserrat:ital,wght@0,600;0,800;0,900&family=Roboto:ital,wght@0,400;0,700;&display=swap&family=Playfair+Display:ital@0;1&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <div id="loader-overlay" class="loader-overlay">
+    <div class="loader"></div>
+  </div>
+
+  <div id="page-content" style="display: none">
+    <header>
+      <div class="fixed-menu styled">
+        <a href="/">
+          <img class="logo" src="/assets/icons/logo.svg" alt="Logo Sakada Design" />
+          <img class="white-logo" src="/assets/icons/white-logo.svg" alt="Logo Sakada Design" />
+        </a>
+
+        <button class="btn-menu">
+          <img class="open-menu-icon" src="/assets/icons/open-menu-icon.svg" alt="Open menu icon" />
+          <img class="close-menu-icon" src="/assets/icons/close-menu-icon.svg" alt="Open menu icon" />
+        </button>
+      </div>
+
+      <div id="navigation" class="navigation-container">
+        <nav class="menu-navigation">
+          <ul>
+            <li>
+              <a href="/">
+                Hello
+                <br />
+                <span>Tudo começa aqui</span>
+              </a>
+              <a href="/src/pages/digital-signage/digital-signage.html">
+                Digital Signage
+                <br />
+                <span>texto vai aqui</span>
+              </a>
+              <a href="/src/pages/dna/dna.html">
+                Dna
+                <br />
+                <span>texto vai aqui</span>
+              </a>
+              <a href="/src/pages/digital-projects/digital-projects.html">
+                Digital Projects
+                <br />
+                <span>texto vai aqui</span>
+              </a>
+              <a href="/src/pages/branding-projects/branding-projects.html">
+                Branding Projects
+                <br />
+                <span>texto vai aqui</span>
+              </a>
+              <a href="/src/pages/contact/contact.html">
+                Contact
+                <br />
+                <span>texto vai aqui</span>
+              </a>
+            </li>
+          </ul>
+          <div class="social-medias-links">
+            <a href="https://wa.me/5521993277255?text=Ol%C3%A1,%20vim%20pelo%20site!" target="_blank">
+              <img src="/assets/icons/social-medias/whatsapp-icon.svg" alt="WhatsApp link" />
+            </a>
+            <a href="https://www.instagram.com/sakadadesign/" target="_blank">
+              <img src="/assets/icons/social-medias/intagram-icon.svg" alt="Instagram profile link" />
+            </a>
+            <a href="https://www.facebook.com/sakadadesigneideias" target="_blank">
+              <img src="/assets/icons/social-medias/facebook-icon.svg" alt="Facebook profile link" />
+            </a>
+            <a href="https://www.linkedin.com/company/5259071/admin/feed/posts/" target="_blank">
+              <img src="/assets/icons/social-medias/linkedin-icon.svg" alt="Linkedin profile link" />
+            </a>
+            <a href="https://www.tiktok.com/@sakadadesign?_t=8n695PlUJs6&_r=1" target="_blank">
+              <img src="/assets/icons/social-medias/tiktok-icon.svg" alt="TikTok profile link" />
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="page-header">
+        <h2 class="title"></h2>
+      </div>
+
+      <section class="content">
+        <div class="filter"></div>
+
+        <div class="filter-mobile">
+          <button class="filter-btn">
+            Filtrar Projetos
+            <img src="/assets/icons/filter-icon.svg" alt="" />
+          </button>
+
+          <div class="filter-options"></div>
+        </div>
+
+        <div class="projects"></div>
+      </section>
+      <div class="overlay"></div>
+    </main>
+
+    <footer>
+      <p class="text">@ 2024 SAKADA DESIGN. Todos os direitos reservados.</p>
+
+      <nav>
+        <ul>
+          <li>
+            <a href="https://wa.me/5521993277255?text=Ol%C3%A1,%20vim%20pelo%20site!" target="_blank">
+              <img src="/assets/icons/social-medias/whatsapp-icon.svg" alt="WhatsApp link" />
+            </a>
+            <a href="https://www.instagram.com/sakadadesign/" target="_blank">
+              <img src="/assets/icons/social-medias/intagram-icon.svg" alt="Instagram profile link" />
+            </a>
+            <a href="https://www.facebook.com/sakadadesigneideias" target="_blank">
+              <img src="/assets/icons/social-medias/facebook-icon.svg" alt="Facebook profile link" />
+            </a>
+            <a href="https://www.linkedin.com/company/5259071/admin/feed/posts/" target="_blank">
+              <img src="/assets/icons/social-medias/linkedin-icon.svg" alt="Linkedin profile link" />
+            </a>
+            <a href="https://www.tiktok.com/@sakadadesign?_t=8n695PlUJs6&_r=1" target="_blank">
+              <img src="/assets/icons/social-medias/tiktok-icon.svg" alt="TikTok profile link" />
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </footer>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+  <script type="module" src="/src/api/services/page/pageService.js"></script>
+</body>
+
+</html>

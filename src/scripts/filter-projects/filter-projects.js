@@ -13,7 +13,7 @@ export default function initializeProjectFilters() {
   noProjectsMessage.style.display = 'none';
   projectsContainer.parentNode.insertBefore(noProjectsMessage, projectsContainer);
 
-  if (!filter || !mobileFilter || projects.length === 0) {
+  if (!mobileFilter || projects.length === 0) {
     console.error('Alguns elementos não foram encontrados no DOM.');
     return;
   }
