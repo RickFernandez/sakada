@@ -6,10 +6,10 @@
     <title>SAKADA DESIGN</title>
 
     <!-- STYLE -->
-    <link rel="stylesheet" href="styles/shared/global-style.css" />
+    <link rel="stylesheet" href="./src/styles/shared/global-style.css" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="styles/shared/header-style.css" />
-    <link rel="stylesheet" href="styles/shared/footer-style.css" />
+    <link rel="stylesheet" href="./src/styles/shared/header-style.css" />
+    <link rel="stylesheet" href="./src/styles/shared/footer-style.css" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -24,32 +24,33 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
   </head>
+
   <body>
     <div class="site-wrapper">
       <header>
         <div class="fixed-menu">
-          <a href="index.html">
+          <a href="/">
             <img
               class="logo"
-              src="assets/icons/logo.svg"
+              src="/assets/icons/logo.svg"
               alt="Logo Sakada Design"
             />
             <img
               class="white-logo"
-              src="assets/icons/white-logo.svg"
+              src="/assets/icons/white-logo.svg"
               alt="Logo Sakada Design"
             />
           </a>
 
-          <button class="btn-menu" onClick="onMenu()">
+          <button class="btn-menu">
             <img
               class="open-menu-icon"
-              src="assets/icons/open-menu-icon.svg"
+              src="/assets/icons/open-menu-icon.svg"
               alt="Open menu icon"
             />
             <img
               class="close-menu-icon"
-              src="assets/icons/close-menu-icon.svg"
+              src="/assets/icons/close-menu-icon.svg"
               alt="Open menu icon"
             />
           </button>
@@ -59,32 +60,32 @@
           <nav class="menu-navigation">
             <ul>
               <li>
-                <a href="index.html">
+                <a href="/">
                   Hello
                   <br />
                   <span>Tudo começa aqui</span>
                 </a>
-                <a href="pages/digital-signage.html">
+                <a href="src/pages/digital-signage/digital-signage.html">
                   Digital Signage
                   <br />
                   <span>texto vai aqui</span>
                 </a>
-                <a href="pages/dna.html">
+                <a href="src/pages/dna/dna.html">
                   Dna
                   <br />
                   <span>texto vai aqui</span>
                 </a>
-                <a href="pages/digital-projects.html">
+                <a href="src/pages/digital-projects/digital-projects.html">
                   Digital Projects
                   <br />
                   <span>texto vai aqui</span>
                 </a>
-                <a href="pages/branding-projects.html">
+                <a href="src/pages/branding-projects/branding-projects.html">
                   Branding Projects
                   <br />
                   <span>texto vai aqui</span>
                 </a>
-                <a href="pages/contact.html">
+                <a href="src/pages/contact/contact.html">
                   Contact
                   <br />
                   <span>texto vai aqui</span>
@@ -153,7 +154,7 @@
               <source src="assets/videos/home-video.m4v" type="video/mp4" />
             </video>
 
-            <button class="scroll-btn" onclick="onScrollFromClick()">
+            <button class="scroll-btn">
               <span class="scroll-arrow"></span>
               <span class="scroll-arrow"></span>
               <span class="scroll-arrow"></span>
@@ -161,16 +162,12 @@
           </div>
 
           <div class="face back">
-            <!-- <div id="loader-overlay" class="loader-overlay">
-              <div class="loader"></div>
-            </div> -->
-
             <main>
               <section class="buttons">
-                <a href="pages/digital-signage.html" class="digital-signage">
+                <a href="src/pages/digital-signage/digital-signage.html" class="digital-signage">
                   <span>Digital Signage</span>
                 </a>
-                <a href="pages/dna.html" class="dna">
+                <a href="src/pages/dna/dna.html" class="dna">
                   <span>Dna</span>
                 </a>
               </section>
@@ -477,8 +474,8 @@
       </section>
     </div>
 
-    <script src="main.js"></script>
-    <script src="src/api/services/page/pageService.js" type="module"></script>
+    <script type="module" src="/main.js"></script>
+    <script type="module" src="/src/api/services/page/pageService.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       const swiper = new Swiper('.swiper', {
