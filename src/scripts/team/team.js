@@ -1,5 +1,4 @@
 export function setTeam(employees) {
-  console.log(employees);
   const teamSection = document.querySelector('.team .employees');
 
   employees.forEach(employee => {

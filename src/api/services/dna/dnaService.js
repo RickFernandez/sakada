@@ -1,6 +1,5 @@
 const dnaService = {
   setDnaPage(pageData) {
-    console.log('chamou')
     const wrapper = document.querySelector('.wrapper');
     pageData.topic.forEach(topic => {
       const containerClass = topic.title.toLowerCase().replace(/ /g, '-');
