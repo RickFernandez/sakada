@@ -69,9 +69,9 @@ const brandingAndDigitalProjectsService = {
       viewProjectElement.addEventListener('click', event => {
         event.preventDefault()
         const referringPage = window.location.pathname.includes('digital-projects')
-          ? 'digital-projects.html'
+          ? '/src/pages/digital-projects/digital-projects.html'
           : window.location.pathname.includes('branding-projects')
-            ? 'branding-projects.html'
+            ? '/src/pages/branding-projects/branding-projects.html'
             : '/'
 
         window.location.href = `/src/pages/project/project?projectName=${project.attributes.referenceUrl}&referrer=${referringPage}`;
