@@ -1,4 +1,5 @@
 import API_ROUTES from '/src/api/apiConfig';
+import headerService from '/src/api/services/header/headerService';
 
 const projectService = {
   async loadProjectData() {
@@ -22,6 +23,7 @@ const projectService = {
 
       if (projectData) {
         this.updateProjectPage(projectData, referringPage);
+        headerService.setNavigation();
       }
     } catch (error) {
       console.error('Erro ao carregar os dados do projeto:', error);

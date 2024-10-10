@@ -4,6 +4,7 @@ import homeService from '/src/api/services/home/homeService';
 import initializeProjectFilters from '/src/scripts/filter-projects/filter-projects';
 import digitalSignageService from '/src/api/services/digital-signage/digitalSignageService';
 import brandingAndDigitalProjectsService from '/src/api/services/branding-and-digital-projects/brandingAndDigitalProjectsService';
+import headerService from '/src/api/services/header/headerService';
 
 const pageService = {
   currentPageUrl: '',
@@ -107,6 +108,7 @@ const pageService = {
   handleNavigation(url) {
     this.currentPageUrl = !this.isHomePage ? this.getPageNameFromUrl(url) : url;
     this.loadPageData(this.currentPageUrl);
+    headerService.setNavigation();
   },
 
   getPageNameFromUrl(url) {
