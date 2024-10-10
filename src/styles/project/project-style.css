@@ -38,6 +38,7 @@ h4 {
 }
 
 .back-btn {
+  width: fit-content;
   color: var(--black);
   font-size: 2rem;
   text-decoration: none;
