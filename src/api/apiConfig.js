@@ -6,7 +6,8 @@ const API_ROUTES = {
   pages: `${API_URL}/pages?populate[pageHeader][populate][backgroundMedia][fields][0]=ur&populate[projects][fields][0]=referenceUrl&populate[projects][populate][wallpaperMedia][fields][0]=url&populate[projects][populate][project_filters][fields][0]=name&populate[project_filters][fields][0]=name&populate[team][populate][employee][fields][0]=name&populate[team][populate][employee][fields][1]=description&populate[team][populate][employee][populate][picture][fields][0]=url&populate[clients][populate][client][populate][logo][fields][0]=url&populate[topic][populate][simple_content][populate][image][fields][0]=url&populate[simple_contents][populate][image][fields][0]=url`,
   projects: `${API_URL}/projects?populate[presentationMedia][fields][0]=url&populate[wallpaperMedia][fields][0]=url&populate[challengeMedias][fields][0]=url&populate[solutionMedia][fields][0]=url&populate[testimonyMedias][fields][0]=url&populate[header][populate][backgroundMedia][fields][0]=url&populate[testimony][populate][picture][fields][0]=url`,
   projectFilters: `${API_URL}/project-filters?populate[projects][fields][0]=referenceUrl&populate[projects][fields][1]=projectName&populate[categories][fields][0]=name`,
-  client: `${API_URL}/client?populate[client][populate][logo][fields][0]=url`
+  client: `${API_URL}/client?populate[client][populate][logo][fields][0]=url`,
+  navigation: `${API_URL}/navigation?populate=*`
 }
 
 export default API_ROUTES;
