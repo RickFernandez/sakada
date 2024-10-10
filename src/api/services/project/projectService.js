@@ -1,5 +1,6 @@
 import API_ROUTES from '/src/api/apiConfig';
 import headerService from '/src/api/services/header/headerService';
+import utils from '/src/scripts/utils/utils';
 
 const projectService = {
   async loadProjectData() {
@@ -14,7 +15,7 @@ const projectService = {
 
     const apiUrl = `${API_ROUTES.projects}&filters[projectName]=${projectName}`;
 
-    this.showLoader();
+    utils.toggleLoader(true);
 
     try {
       const response = await fetch(apiUrl);
@@ -28,21 +29,7 @@ const projectService = {
     } catch (error) {
       console.error('Erro ao carregar os dados do projeto:', error);
     } finally {
-      this.hideLoader();
-    }
-  },
-
-  showLoader() {
-    const loaderOverlay = document.getElementById('loader-overlay');
-    if (loaderOverlay) {
-      loaderOverlay.style.display = 'flex';
-    }
-  },
-
-  hideLoader() {
-    const loaderOverlay = document.getElementById('loader-overlay');
-    if (loaderOverlay) {
-      loaderOverlay.style.display = 'none';
+      utils.toggleLoader(false);
     }
   },
 

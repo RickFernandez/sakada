@@ -5,6 +5,7 @@ import initializeProjectFilters from '/src/scripts/filter-projects/filter-projec
 import digitalSignageService from '/src/api/services/digital-signage/digitalSignageService';
 import brandingAndDigitalProjectsService from '/src/api/services/branding-and-digital-projects/brandingAndDigitalProjectsService';
 import headerService from '/src/api/services/header/headerService';
+import utils from '/src/scripts/utils/utils';
 
 const pageService = {
   currentPageUrl: '',
@@ -15,7 +16,7 @@ const pageService = {
     if (!apiUrl) return;
 
     try {
-      this.toggleLoader(true);
+      utils.toggleLoader(true);
       const response = await fetch(apiUrl);
       const data = await response.json();
       const pageData = data.data[0]?.attributes;
@@ -27,7 +28,7 @@ const pageService = {
     } catch (error) {
       console.error('Erro ao carregar os dados da página:', error);
     } finally {
-      this.toggleLoader(false);
+      utils.toggleLoader(false);
       if (url.includes('projects')) {
         initializeProjectFilters();
       }
@@ -94,15 +95,6 @@ const pageService = {
     pageHeaderElement.style.backgroundRepeat = 'no-repeat';
     pageHeaderElement.style.backgroundPosition = 'center';
     pageHeaderElement.style.backgroundSize = 'cover';
-
-    document.getElementById('page-content').style.display = 'block';
-  },
-
-  toggleLoader(show) {
-    const loaderOverlay = document.getElementById('loader-overlay');
-    if (loaderOverlay) {
-      loaderOverlay.style.display = show ? 'flex' : 'none';
-    }
   },
 
   handleNavigation(url) {
